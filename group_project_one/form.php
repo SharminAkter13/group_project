@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Simple PHP Form</title>
-    <style>
-        label { display: block; margin-top: 10px; }
-        input[type="submit"] { margin-top: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>OOP Form Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      gap: 20px;
+      margin: 30px;
+    }
+    form {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    table, th, td {
+      border: 1px solid #999;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+  </style>
 </head>
 <body>
 
-    <h2>Contact Form</h2>
+  <form id="dataForm">
+    <h3>Add Person</h3>
+    <label>Name: <input type="text" id="name" required></label>
+    <label>Age: <input type="number" id="age" required></label>
+    <button type="submit">Add</button>
+  </form>
 
-    <form action="process.php" method="POST">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-
-        <input type="submit" value="Submit Form">
-    </form>
-
+  <script src="app.js"></script>
 </body>
 </html>
